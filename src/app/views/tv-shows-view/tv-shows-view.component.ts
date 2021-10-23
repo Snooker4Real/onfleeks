@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
 import {TvShowModel} from "../../models/tv-show.model";
 import {TvShowsService} from "../../services/tv-shows/tv-shows.service";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-tv-show-view',
@@ -12,6 +13,7 @@ export class TvShowsViewComponent implements OnInit, OnDestroy {
 
   tvShowsSubs: Subscription;
   tvShows: Array<TvShowModel>;
+
 
   constructor(private tvShowsService: TvShowsService) {
     this.tvShows = [];

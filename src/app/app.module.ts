@@ -14,6 +14,7 @@ import { ErrorsFormComponent } from './components/errors-form/errors-form.compon
 import { HeaderComponent } from './components/header/header.component';
 import {FormsModule} from "@angular/forms";
 import { TvShowViewComponent } from './components/tv-show-view/tv-show-view.component';
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { TvShowViewComponent } from './components/tv-show-view/tv-show-view.comp
         AppRoutingModule,
         FormsModule
     ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
