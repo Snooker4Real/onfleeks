@@ -24,8 +24,6 @@ export class TvShowModel {
     this._criticism = 0;
     this._imgUrl = imgUrl;
     this._commentaries = commentaries;
-
-    TvShowModel._tvShowLength++;
   }
 
   get id(): number {

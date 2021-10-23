@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {TvShowModel} from "../../models/tv-show.model";
+import {CommentaryModel} from "../../models/commentary.model";
 
 @Injectable({
   providedIn: 'root'
@@ -81,20 +82,40 @@ export class TvShowsService {
 
   // Ici !!!!!!!
 
-  // getTvShowById(tvShowId: number): Promise<TvShowModel> {
-  //   return new Promise<TvShowModel>(
-  //     (res, rej) => {
-  //       const tvShows = this.tvShows.getValue();
-  //
-  //       for (let tvShow in tvShows){
-  //         if (tvShow.id == tvShowId){
-  //           res(tvShow);
-  //           break;
-  //         }
-  //       }
-  //     }
-  //   );
-  // }
+  getTvShowById(tvShowId: number): Promise<TvShowModel> {
+    return new Promise<TvShowModel>(
+      (res, rej) => {
+        const tvShows = this.tvShows.getValue();
+
+        for (let tvShow of tvShows){
+          if (tvShow.id == tvShowId){
+            res(tvShow);
+            break;
+          }
+        }
+      }
+    );
+  }
+
+
+
+
+  addComment(commentToAdd: CommentaryModel, idTvShow: number): Promise<void> {
+    return new Promise<void>(
+      (res,rej) => {
+        setTimeout(() => {
+          const tvShows = this.tvShows.getValue();
+          for (let tvShow of tvShows) {
+            if (tvShow.id == idTvShow) {
+              tvShow.commentaries.push(commentToAdd);
+              this.tvShows.next(tvShows);
+              res();
+              break;
+            }
+          }
+        },500)
+      })
+  }
 
 
 
