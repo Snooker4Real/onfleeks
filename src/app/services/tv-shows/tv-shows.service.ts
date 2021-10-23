@@ -9,7 +9,7 @@ export class TvShowsService {
 
 
   tvShows: BehaviorSubject<Array<TvShowModel>>;
-  tvShow: number;
+  //tvShow: number;
 
   constructor() {
 
@@ -62,14 +62,15 @@ export class TvShowsService {
     this.tvShows = new BehaviorSubject<Array<TvShowModel>>(tvShowsToPush);
   }
 
+  // Ici !!!!!!!
+
   getTvShowById(tvShowId: number): Promise<TvShowModel> {
     return new Promise<TvShowModel>(
       (res, rej) => {
         const tvShows = this.tvShows.getValue();
 
-
         for (let tvShow in tvShows){
-          if (tvShow.id === tvShowId){
+          if (tvShow.id == tvShowId){
             res(tvShow);
             break;
           }

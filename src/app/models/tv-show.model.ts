@@ -10,11 +10,13 @@ export class TvShowModel {
   private _imgUrl: string;
   private _commentaries : CommentaryModel[];
 
-  private static _tvSowLength = 1;
-
+  private static _tvShowLength: number;
 
   constructor(name: string, firstSeasonOutDate: Date, seasonsNumber: number, description: string, criticism: number, imgUrl: string, commentaries: CommentaryModel[]) {
-    this._id = TvShowModel._tvSowLength;
+    if(!TvShowModel._tvShowLength) {
+      TvShowModel._tvShowLength = 1;
+    }
+    this._id = TvShowModel._tvShowLength++;
     this._name = name;
     this._firstSeasonOutDate = firstSeasonOutDate;
     this._seasonsNumber = seasonsNumber;
@@ -23,7 +25,7 @@ export class TvShowModel {
     this._imgUrl = imgUrl;
     this._commentaries = commentaries;
 
-    TvShowModel._tvSowLength++;
+    TvShowModel._tvShowLength++;
   }
 
   get id(): number {
@@ -90,11 +92,11 @@ export class TvShowModel {
     this._commentaries = value;
   }
 
-  static get tvSowLength(): number {
-    return this._tvSowLength;
+  static get tvShowLength(): number {
+    return this._tvShowLength;
   }
 
-  static set tvSowLength(value: number) {
-    this._tvSowLength = value;
+  static set tvShowLength(value: number) {
+    this._tvShowLength = value;
   }
 }

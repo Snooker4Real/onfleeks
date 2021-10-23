@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tv-show-view',
-  templateUrl: './tv-show-view.component.html',
-  styleUrls: ['./tv-show-view.component.css']
+  templateUrl: './tv-shows-view.component.html',
+  styleUrls: ['./tv-shows-view.component.css']
 })
-export class TvShowViewComponent implements OnInit {
+export class TvShowsViewComponent implements OnInit {
 
 
 
