@@ -6,7 +6,7 @@ import {NewTvShowViewComponent} from "./views/new-tv-show-view/new-tv-show-view.
 import {SingleTvShowViewComponent} from "./views/single-tv-show-view/single-tv-show-view.component";
 import {EditTvShowViewComponent} from "./views/edit-tv-show-view/edit-tv-show-view.component";
 import {AuthViewComponent} from "./views/auth-view/auth-view.component";
-import {ErrorViewComponent} from "./views/error-view/error-view.component";
+import {ErrorViewComponent} from "./views/error/error-view.component";
 
 const routes: Routes = [
   {path: '', canActivate: [AuthGuard], component: TvShowViewComponent},
