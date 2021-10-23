@@ -103,5 +103,10 @@
       }
     }
   },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "css"
+    }
+  },
   "defaultProject": "onfleeks"
 }
