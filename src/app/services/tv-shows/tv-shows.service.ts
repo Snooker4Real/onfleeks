@@ -64,19 +64,19 @@ export class TvShowsService {
 
   // Ici !!!!!!!
 
-  getTvShowById(tvShowId: number): Promise<TvShowModel> {
-    return new Promise<TvShowModel>(
-      (res, rej) => {
-        const tvShows = this.tvShows.getValue();
-
-        for (let tvShow in tvShows){
-          if (tvShow.id == tvShowId){
-            res(tvShow);
-            break;
-          }
-        }
-      }
-    );
-  }
+  // getTvShowById(tvShowId: number): Promise<TvShowModel> {
+  //   return new Promise<TvShowModel>(
+  //     (res, rej) => {
+  //       const tvShows = this.tvShows.getValue();
+  //
+  //       for (let tvShow in tvShows){
+  //         if (tvShow.id == tvShowId){
+  //           res(tvShow);
+  //           break;
+  //         }
+  //       }
+  //     }
+  //   );
+  // }
 
 }

@@ -15,8 +15,22 @@
       >Nouvel Série</button>
     </div>
 
-    <ng-container *ngIf="tv">
+    <ng-container *ngIf="tvShows.length > 0">
+      <div *ngFor="let tvShow of tvShows"
+      [routerLink]="['/tvshows',tvShow.id]"
+      class="card" style="width: 18rem;"
+      >
+        <img class="card-img-top" [src]="tvShow.imgUrl" alt="Card image cap">
 
+        <div class="card-body">
+
+          <h6>Id</h6>
+          <h5 class="card-title">{{tvShow.name}}</h5>
+
+          <p class="card-text">{{tvShow.firstSeasonOutDate}}</p>
+          <a href="" class="btn btn-primary">Voir Détails</a>
+        </div>
+      </div>
     </ng-container>
   </div>
 
