@@ -10,7 +10,7 @@
     <div class="d-flex justify-content-between mb-3">
       <h2>Nos Séries</h2>
       <button
-        routerLink="/tvshows/add"
+        routerLink="/shows/add"
         class="btn btn-success btn-lg"
       >Nouvel Série
       </button>
@@ -19,18 +19,17 @@
     <ng-container *ngIf="tvShows.length > 0">
       <div class="row d-flex justify-content-between">
         <div *ngFor="let tvShow of tvShows"
-             [routerLink]="['/tvshows',tvShow.id]"
+             [routerLink]="['/shows',tvShow.id]"
              class="card m-3" style="width: 18rem;"
         >
-          <img class="card-img-top" [src]="tvShow.imgUrl" alt="Card image cap">
+          <img class="card-img-top" [src]="tvShow.imgUrl" alt="Card image">
 
           <div class="card-body">
 
-            <h6></h6>
             <h5 class="card-title">{{tvShow.id}}. {{tvShow.name}}</h5>
 
             <p class="card-text">Sortie le {{tvShow.firstSeasonOutDate | date:'dd/MM/yyyy'}}</p>
-            <a href="#" class="btn btn-primary">Voir Détails</a>
+            <a [routerLink]="['/shows', tvShow.id]" class="btn btn-primary">Voir Détails</a>
           </div>
         </div>
       </div>

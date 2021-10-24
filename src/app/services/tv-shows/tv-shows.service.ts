@@ -80,8 +80,6 @@ export class TvShowsService {
     this.tvShows = new BehaviorSubject<Array<TvShowModel>>(tvShowsToPush);
   }
 
-  // Ici !!!!!!!
-
   getTvShowById(tvShowId: number): Promise<TvShowModel> {
     return new Promise<TvShowModel>(
       (res, rej) => {
@@ -97,8 +95,18 @@ export class TvShowsService {
     );
   }
 
-
-
+  addTvShow(tvShowToAdd: TvShowModel): Promise<void> {
+    return new Promise<void>(
+      (res, rej) => {
+        setTimeout(() => {
+          const tvShows = this.tvShows.getValue();
+          tvShows.push(tvShowToAdd);
+          this.tvShows.next(tvShows);
+          res();
+        },500);
+      }
+    );
+  }
 
   addComment(commentToAdd: CommentaryModel, idTvShow: number): Promise<void> {
     return new Promise<void>(
@@ -115,6 +123,24 @@ export class TvShowsService {
           }
         },500)
       })
+  }
+
+  editTvShow(editedTvShow: TvShowModel): Promise<void> {
+    return new Promise<void>(
+      (res,rej) => {
+        setTimeout(() => {
+          const tvShows = this.tvShows.getValue();
+          for (let [index, tvShow] of tvShows.entries()) {
+            if (tvShow.id === editedTvShow.id) {
+              tvShows[index] = editedTvShow;
+              this.tvShows.next(tvShows);
+              res();
+              break;
+            }
+          }
+        },500);
+      }
+    );
   }
 
 

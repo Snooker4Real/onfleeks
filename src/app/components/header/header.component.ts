@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.routerEventsSub = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((e:  any) => {
-      if(e.url === '/books/new') {
+      if(e.url === '/shows/new') {
         this.isAddPage = true;
       }
       else {

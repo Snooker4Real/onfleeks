@@ -13,8 +13,8 @@ import { TvShowFormComponent } from './components/tv-show-form/tv-show-form.comp
 import { ErrorsFormComponent } from './components/errors-form/errors-form.component';
 import { HeaderComponent } from './components/header/header.component';
 import {FormsModule} from "@angular/forms";
-import { TvShowViewComponent } from './components/tv-show-view/tv-show-view.component';
 import {DatePipe} from "@angular/common";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -28,12 +28,12 @@ import {DatePipe} from "@angular/common";
     TvShowFormComponent,
     ErrorsFormComponent,
     HeaderComponent,
-    TvShowViewComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        RouterModule
     ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

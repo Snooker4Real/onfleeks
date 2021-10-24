@@ -11,9 +11,9 @@ import {ErrorViewComponent} from "./views/error/error-view.component";
 const routes: Routes = [
   {path: '', canActivate: [AuthGuard], component: TvShowsViewComponent},
   {path: 'home', canActivate: [AuthGuard], component: TvShowsViewComponent},
-  {path: 'tvshows/new', canActivate: [AuthGuard], component: NewTvShowViewComponent},
-  {path: 'tvshows/:id', canActivate: [AuthGuard], component: SingleTvShowViewComponent},
-  {path: 'tvshows/:id/edit', canActivate: [AuthGuard], component: EditTvShowViewComponent},
+  {path: 'shows/new', canActivate: [AuthGuard], component: NewTvShowViewComponent},
+  {path: 'shows/:id', canActivate: [AuthGuard], component: SingleTvShowViewComponent},
+  {path: 'shows/:id/edit', canActivate: [AuthGuard], component: EditTvShowViewComponent},
   {path: 'auth', component: AuthViewComponent},
   {path: 'not-found', component: ErrorViewComponent},
   {path: '**', redirectTo: 'not-found'}

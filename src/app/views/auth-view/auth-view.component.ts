@@ -33,5 +33,4 @@ export class AuthViewComponent implements OnInit {
         this.errMsg = errMsg;
       });
     }
-
 }
